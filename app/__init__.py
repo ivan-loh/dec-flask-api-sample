@@ -8,6 +8,7 @@ unsafe_routes = [
     '/api/v1/system/time'
 ]
 
+
 def create_app(config_class=Config):
     # Create app
     app = Flask(__name__, static_url_path=None)
