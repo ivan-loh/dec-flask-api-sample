@@ -13,6 +13,13 @@ def app():
 
 @pytest.fixture
 def client(app):
+    client = app.test_client()
+    client.environ_base['HTTP_X_API_KEY'] = TestConfig.SECRET_KEY
+    return client
+
+
+@pytest.fixture
+def unsafe_client(app):
     return app.test_client()
 
 

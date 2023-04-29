@@ -1,8 +1,8 @@
-def test_get_server_time(client):
+def test_get_server_time(unsafe_client):
 
     from datetime import datetime
 
-    response = client.get('api/v1/system/time')
+    response = unsafe_client.get('api/v1/system/time')
 
     assert response.status_code == 200
 
